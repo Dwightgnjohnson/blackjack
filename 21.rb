@@ -1,23 +1,29 @@
-require ''./cards.rb'
+deck = []
 
 class Card
 attr_accessor :suit, :value, :name
-  @@deck = []
 
-  def self.all
-    @@deck
-  end
 
   def initialize(suit, value, name)
     @suit = suit
     @value = value
     @name = name
     @inplay = true
-    @@deck << self
+    deck << self
   end
-
-
 
 end
 
-Card.all.each do |x| p x.name end
+require './cards.rb'
+
+  p  Card.all[1].value Card.all[1].name
+  p  Card.all[3].value
+
+#
+# Card.all.each do |x|
+#  puts "#{x.name} is #{x.value}"
+# end
+#
+
+cards = cards.shuffle
+cards.shift #removes first item from array
